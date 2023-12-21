@@ -29,10 +29,10 @@ class RockPaperScissors {
 
     getComputerChoice(){
         result = Math.floor(Math.random() * 3);
+        console.log(result);
         return choice[result];
     }
 }
-
     console.log(RockPaperScissors.getComputerChoice);
 /*
     function getUserInput()
