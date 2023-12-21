@@ -9,7 +9,7 @@
 <body>
 <script>
 
-choice = ["Rock", "Paper", "Scissors"]
+choice = ["rock", "paper", "scissors"]
 
 function getComputerChoice(){
     result = Math.floor(Math.random() * 3);
@@ -17,11 +17,18 @@ function getComputerChoice(){
 }
 
 function getUserInput(){
-    let userInput = prompt("Write either rock, paper or scissors");
+    userInput = prompt("Write either rock, paper or scissors");
     userInput = userInput.toLowerCase();
-    return userInput;
+    if (userInput === choice.includes(choice)) {
+        return userInput;
+    } 
+    else {
+        alert("Invalid input. Please write either rock, paper or scissors");
+    }
 }
+
 console.log(getUserInput());
+
 </script>
 </body>
 </html>
