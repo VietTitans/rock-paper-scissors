@@ -19,11 +19,12 @@ function getComputerChoice(){
 function getUserInput(){
     userInput = prompt("Write either rock, paper or scissors");
     userInput = userInput.toLowerCase();
-    if (userInput === choice.includes(choice)) {
-        return userInput;
+ 
+    if (userInput !== "rock") {
+        alert("Invalid input. Please write either rock, paper or scissors");
     } 
     else {
-        alert("Invalid input. Please write either rock, paper or scissors");
+        return userInput;
     }
 }
 
