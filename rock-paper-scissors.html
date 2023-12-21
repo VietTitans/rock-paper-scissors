@@ -16,7 +16,12 @@ function getComputerChoice(){
     return choice[result];
 }
 
-
+function getUserInput(){
+    let userInput = prompt("Write either rock, paper or scissors");
+    userInput = userInput.toLowerCase();
+    return userInput;
+}
+console.log(getUserInput());
 </script>
 </body>
 </html>
