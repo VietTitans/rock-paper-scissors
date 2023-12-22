@@ -11,24 +11,48 @@
 
 const validChoice = ["rock", "paper", "scissors"]
 
+
 function getComputerChoice(){
     result = Math.floor(Math.random() * 3);
-    return choice[result];
+    computerChoice = validChoice[result];
+    return computerChoice;
 }
 
-function getUserInput(){
+function getUserInput(callback){
     let userInput = prompt("Write either rock, paper or scissors");
     userInput = userInput.toLowerCase();
- 
     if (!validChoice.includes(userInput)) {
         alert("Invalid input. Please write either rock, paper or scissors");
-        return getUserInput();
+        getUserInput(callback);
     } else {
-        return userInput;
+        callback(userInput);
     }
 }
 
+function playGame(userInput, computerChoice){
+    if (userInput === "rock" && computerChoice === "scissors"){
+        return console.log("Rock beat Scissors. You win!")
+    } else if (userInput === "paper" && computerChoice === "rock"){
+        return console.log("Paper beat Rock. You win!")
+    } else if (userInput === "scissors" && computerChoice === "paper"){
+        return console.log("Scissors beat paper. You win!")
+    } else if (userInput === computerChoice){
+        return console.log("It's a tie!")
+    } else {
+        return console.log("You lost!")
+    }
+}
+
+getUserInput(function(userInput){
+    console.log(userInput);
+});
+
+/*
+getComputerChoice();
+playGame(userInput, computerChoice);
+console.log(getComputerChoice());
 console.log(getUserInput());
+console.log(playGame(userInput, computerChoice));*/
 
 </script>
 </body>
