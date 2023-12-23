@@ -29,11 +29,11 @@ function getUserInput(){
 
 function playGame(userInput, computerChoice){
     if (userInput === "rock" && computerChoice === "scissors"){
-        return console.log("Rock beat Scissors. You win!")
+        return console.log("You win!")
     } else if (userInput === "paper" && computerChoice === "rock"){
-        return console.log("Paper beat Rock. You win!")
+        return console.log("You win!")
     } else if (userInput === "scissors" && computerChoice === "paper"){
-        return console.log("Scissors beat paper. You win!")
+        return console.log("You win!")
     } else if (userInput === computerChoice){
         return console.log("It's a tie!")
     } else {
