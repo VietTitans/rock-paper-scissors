@@ -16,14 +16,14 @@ function getComputerChoice(){
     return computerChoice;
 }
 
-function getUserInput(callback){
+function getUserInput(){
     let userInput = prompt("Write either rock, paper or scissors");
     userInput = userInput.toLowerCase();
     if (!validChoice.includes(userInput)) {
         alert("Invalid input. Please write either rock, paper or scissors");
-        getUserInput(callback);
+        getUserInput();
     } else {
-        callback(userInput);
+        return userInput;
     }
 }
 
@@ -41,8 +41,10 @@ function playGame(userInput, computerChoice){
     }
 }
 
-const userInput = getUserInput();
-const computerChoice = getComputerChoice();
+computerChoice = getComputerChoice();
+userInput = getUserInput();
+console.log(`The computer picked ${computerChoice}`);
+console.log(`You picked ${userInput}`);
 console.log(playGame(userInput, computerChoice));
 
 </script>
