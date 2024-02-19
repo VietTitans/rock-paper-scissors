@@ -6,9 +6,10 @@
     <title>Rock, paper or scissors</title>
 </head>
 <body>
-    <button id="rock"></button>
-    <button id="paper"></button>
-    <button id="scissors"></button>
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+    <div id="displayScore">Score</div>
 <script>
 
 const validChoice = ["rock", "paper", "scissors"];
@@ -49,6 +50,17 @@ userInput = getUserInput();
 console.log(`The computer picked ${computerChoice}`);
 console.log(`You picked ${userInput}`);
 console.log(playRound(userInput, computerChoice));
+
+const selectRock = document.querySelector("#rock");
+selectRock.addEventListener("click", () => {
+    console.log("Rock selected");
+});
+
+// const selectPaper = document.querySelector("paper");
+// selectRock.addEventListener("click", playRound());
+
+// const selectScissors = document.querySelector("scissors");
+// selectRock.addEventListener("click", playRound());
 
 </script>
 </body>
