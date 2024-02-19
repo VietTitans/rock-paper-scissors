@@ -31,13 +31,14 @@ function getUserInput(){
     //     return userInput;
     // }
 
-    // let userInput; 
-    // const selectRock = document.querySelector("#rock");
-    // selectRock.addEventListener("click", () => {
-    //     console.log("Rock selected");
-    //     playRound();
-    //     userInput = "rock";
-    // });
+    let userInput; 
+    const selectRock = document.querySelector("#rock");
+    selectRock.addEventListener("click", () => {
+        console.log("Rock selected");
+        userInput = "rock";
+        playRound();
+    }); // TO DO: Figure out how to implement playGame() everytime rock is selected
+    
     // const selectPaper = document.querySelector("#paper");
     // selectPaper.addEventListener("click", () => {
     //     console.log("Paper selected");
@@ -48,15 +49,16 @@ function getUserInput(){
     //     console.log("Scissors selected");
     //     userInput = "scissors";
     // });
-    // return userInput;
+    return userInput;
 
-    const buttons = document.querySelectorAll("button");
-    buttons.forEach(button => {
-        button.addEventListener("click", () => {
-            button.id = userInput;
-            playRound(button.id);
-        });
-    });
+    
+    //Refactorings potientale: 
+    // const buttons = document.querySelector("button");
+    // buttons.forEach(buttons => {
+    //     button.addEventListener("click", () => {
+    //         playRound(userInput);
+    //     });
+    // });
 }
 
 function playRound(userInput, computerChoice){
@@ -68,8 +70,8 @@ function playRound(userInput, computerChoice){
         return console.log("You win!");
     } else if (userInput === computerChoice){
         return console.log("It's a tie!");
-    } else if (userInput === "undefined"){
-        return console.log("userInput undefined"); //Remove after test
+    } else if (userInput === "undefined"){ //Remove after debug
+        return console.log("userInput undefined"); //Remove after debug
     } else {
         return console.log("You lost!")
     }
@@ -77,9 +79,10 @@ function playRound(userInput, computerChoice){
 
 computerChoice = getComputerChoice();
 userInput = getUserInput();
+playRound(userInput, computerChoice);
 console.log(`The computer picked ${computerChoice}`);
 console.log(`You picked ${userInput}`);
-console.log(playRound(userInput, computerChoice));
+console.log(playRound());
 
 </script>
 </body>
