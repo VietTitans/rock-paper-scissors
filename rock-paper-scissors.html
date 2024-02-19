@@ -30,34 +30,46 @@ function getUserInput(){
     // } else {
     //     return userInput;
     // }
-    let userInput; 
-    const selectRock = document.querySelector("#rock");
-    selectRock.addEventListener("click", () => {
-        console.log("Rock selected");
-        userInput = "rock";
+
+    // let userInput; 
+    // const selectRock = document.querySelector("#rock");
+    // selectRock.addEventListener("click", () => {
+    //     console.log("Rock selected");
+    //     playRound();
+    //     userInput = "rock";
+    // });
+    // const selectPaper = document.querySelector("#paper");
+    // selectPaper.addEventListener("click", () => {
+    //     console.log("Paper selected");
+    //     userInput = "paper";
+    // });
+    // const selectScissors = document.querySelector("#scissors");
+    // selectScissors.addEventListener("click", () => {
+    //     console.log("Scissors selected");
+    //     userInput = "scissors";
+    // });
+    // return userInput;
+
+    const buttons = document.querySelectorAll("button");
+    buttons.forEach(button => {
+        button.addEventListener("click", () => {
+            button.id = userInput;
+            playRound(button.id);
+        });
     });
-    const selectPaper = document.querySelector("#paper");
-    selectPaper.addEventListener("click", () => {
-        console.log("Paper selected");
-        userInput = "paper";
-    });
-    const selectScissors = document.querySelector("#scissors");
-    selectScissors.addEventListener("click", () => {
-        console.log("Scissors selected");
-        userInput = "scissors";
-    });
-    return userInput;
 }
 
 function playRound(userInput, computerChoice){
     if (userInput === "rock" && computerChoice === "scissors"){
-        return console.log("You win!")
+        return console.log("You win!");
     } else if (userInput === "paper" && computerChoice === "rock"){
-        return console.log("You win!")
+        return console.log("You win!");
     } else if (userInput === "scissors" && computerChoice === "paper"){
-        return console.log("You win!")
+        return console.log("You win!");
     } else if (userInput === computerChoice){
-        return console.log("It's a tie!")
+        return console.log("It's a tie!");
+    } else if (userInput === "undefined"){
+        return console.log("userInput undefined"); //Remove after test
     } else {
         return console.log("You lost!")
     }
