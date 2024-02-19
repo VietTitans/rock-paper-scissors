@@ -21,14 +21,14 @@ function getComputerChoice(){
 }
 
 function getUserInput(){
-    let userInput = prompt("Write either rock, paper or scissors");
-    userInput = userInput.toLowerCase();
-    if (!validChoice.includes(userInput)) {
-        alert("Invalid input. Please write either rock, paper or scissors");
-        getUserInput();
-    } else {
-        return userInput;
-    }
+    // let userInput = prompt("Write either rock, paper or scissors");
+    // userInput = userInput.toLowerCase();
+    // if (!validChoice.includes(userInput)) {
+    //     alert("Invalid input. Please write either rock, paper or scissors");
+    //     getUserInput();
+    // } else {
+    //     return userInput;
+    // }
 }
 
 function playRound(userInput, computerChoice){
@@ -55,12 +55,14 @@ const selectRock = document.querySelector("#rock");
 selectRock.addEventListener("click", () => {
     console.log("Rock selected");
 });
-
-// const selectPaper = document.querySelector("paper");
-// selectRock.addEventListener("click", playRound());
-
-// const selectScissors = document.querySelector("scissors");
-// selectRock.addEventListener("click", playRound());
+const selectPaper = document.querySelector("#paper");
+selectPaper.addEventListener("click", () => {
+    console.log("Paper selected");
+});
+const selectScissors = document.querySelector("#scissors");
+selectScissors.addEventListener("click", () => {
+    console.log("Scissors selected");
+});
 
 </script>
 </body>
