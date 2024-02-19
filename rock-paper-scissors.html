@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock, paper or scissors</title>
 </head>
 <body>
+    <button id="rock"></button>
+    <button id="paper"></button>
+    <button id="scissors"></button>
 <script>
 
-const validChoice = ["rock", "paper", "scissors"]
+const validChoice = ["rock", "paper", "scissors"];
 
 function getComputerChoice(){
     result = Math.floor(Math.random() * 3);
@@ -27,7 +30,7 @@ function getUserInput(){
     }
 }
 
-function playGame(userInput, computerChoice){
+function playRound(userInput, computerChoice){
     if (userInput === "rock" && computerChoice === "scissors"){
         return console.log("You win!")
     } else if (userInput === "paper" && computerChoice === "rock"){
@@ -45,7 +48,7 @@ computerChoice = getComputerChoice();
 userInput = getUserInput();
 console.log(`The computer picked ${computerChoice}`);
 console.log(`You picked ${userInput}`);
-console.log(playGame(userInput, computerChoice));
+console.log(playRound(userInput, computerChoice));
 
 </script>
 </body>
