@@ -21,6 +21,7 @@ function getComputerChoice(){
 }
 
 function getUserInput(){
+    // Get userinput by typing
     // let userInput = prompt("Write either rock, paper or scissors");
     // userInput = userInput.toLowerCase();
     // if (!validChoice.includes(userInput)) {
@@ -29,6 +30,23 @@ function getUserInput(){
     // } else {
     //     return userInput;
     // }
+    let userInput; 
+    const selectRock = document.querySelector("#rock");
+    selectRock.addEventListener("click", () => {
+        console.log("Rock selected");
+        userInput = "rock";
+    });
+    const selectPaper = document.querySelector("#paper");
+    selectPaper.addEventListener("click", () => {
+        console.log("Paper selected");
+        userInput = "paper";
+    });
+    const selectScissors = document.querySelector("#scissors");
+    selectScissors.addEventListener("click", () => {
+        console.log("Scissors selected");
+        userInput = "scissors";
+    });
+    return userInput;
 }
 
 function playRound(userInput, computerChoice){
@@ -50,19 +68,6 @@ userInput = getUserInput();
 console.log(`The computer picked ${computerChoice}`);
 console.log(`You picked ${userInput}`);
 console.log(playRound(userInput, computerChoice));
-
-const selectRock = document.querySelector("#rock");
-selectRock.addEventListener("click", () => {
-    console.log("Rock selected");
-});
-const selectPaper = document.querySelector("#paper");
-selectPaper.addEventListener("click", () => {
-    console.log("Paper selected");
-});
-const selectScissors = document.querySelector("#scissors");
-selectScissors.addEventListener("click", () => {
-    console.log("Scissors selected");
-});
 
 </script>
 </body>
