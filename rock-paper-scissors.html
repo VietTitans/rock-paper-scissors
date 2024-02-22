@@ -30,17 +30,15 @@ function getUserInput(){
     // } else {
     //     return userInput;
     // }
-    const selectRock = document.querySelector("#rock");
 
+    const selectRock = document.querySelector("#rock");
     selectRock.addEventListener("click", () => {
         const userInput = "rock";
-        playRound(userInput);
-        console.log(selectRock);
+        console.log(userInput);
         return userInput;
     }); 
 
     // TO DO: Figure out how to implement playGame() everytime rock is selected
-
     
     // const selectPaper = document.querySelector("#paper");
     // selectPaper.addEventListener("click", () => {
@@ -51,15 +49,6 @@ function getUserInput(){
     // selectScissors.addEventListener("click", () => {
     //     console.log("Scissors selected");
     //     userInput = "scissors";
-    // });
-
-    
-    //Refactorings potientale: 
-    // const buttons = document.querySelector("button");
-    // buttons.forEach(buttons => {
-    //     button.addEventListener("click", () => {
-    //         playRound(userInput);
-    //     });
     // });
 }
 
@@ -82,6 +71,7 @@ function playRound(userInput, computerChoice){
 computerChoice = getComputerChoice();
 userInput = getUserInput();
 playRound(userInput, computerChoice);
+
 console.log(`The computer picked ${computerChoice}`);
 console.log(`You picked ${userInput}`);
 console.log(playRound());
