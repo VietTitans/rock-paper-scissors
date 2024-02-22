@@ -32,24 +32,12 @@ function getUserInput(){
     // }
 
     const selectRock = document.querySelector("#rock");
-    selectRock.addEventListener("click", () => {
-        const userInput = "rock";
-        console.log(userInput);
-        return userInput;
-    }); 
+    selectRock.addEventListener("click", () => playRound("rock", computerChoice));
+    const selectPaper = document.querySelector("#paper");
+    selectPaper.addEventListener("click", () => playRound("paper", computerChoice));
+    const selectScissors = document.querySelector("#scissors");
+    selectScissors.addEventListener("click", () => playRound("scissors", computerChoice)); 
 
-    // TO DO: Figure out how to implement playGame() everytime rock is selected
-    
-    // const selectPaper = document.querySelector("#paper");
-    // selectPaper.addEventListener("click", () => {
-    //     console.log("Paper selected");
-    //     userInput = "paper";
-    // });
-    // const selectScissors = document.querySelector("#scissors");
-    // selectScissors.addEventListener("click", () => {
-    //     console.log("Scissors selected");
-    //     userInput = "scissors";
-    // });
 }
 
 function playRound(userInput, computerChoice){
@@ -61,8 +49,6 @@ function playRound(userInput, computerChoice){
         return console.log("You win!");
     } else if (userInput === computerChoice){
         return console.log("It's a tie!");
-    } else if (userInput === "undefined"){ //Remove after debug
-        return console.log("userInput undefined"); //Remove after debug
     } else {
         return console.log("You lost!")
     }
