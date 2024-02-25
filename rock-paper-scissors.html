@@ -74,18 +74,23 @@ function computerWinRound(){
     isGameOver();
 }
 
-
 function isGameOver(){
     if (playerScore === 5){
-        announceWinner.textContent = "The winner is Player!"
-        return true;
+        announceWinner.textContent = "The winner is Player!";
+        // TODO: Select button and remove/disable the button click.
+        // selectRock.removeEventListener("click", () => playRound("rock", getComputerChoice()));
+        // selectPaper.removeEventListener("click", playRound("paper"));
+        // selectScissors.removeEventListener("click", playRound("scissors"));
+        return false;
     } else if (computerScore === 5){
         announceWinner.textContent = "The winner is Computer!"
-        return true;
-    } else {
-        announceWinner.textContent = "It's a tie!"
-        return true; 
+        selectRock.removeEventListener("click", playRound("rock"));
+        selectPaper.removeEventListener("click", playRound("rock"));
+        selectScissors.removeEventListener("click", playRound("rock"));
+        return false;
     }
+
+    return true;
 }
 
 playRound();
