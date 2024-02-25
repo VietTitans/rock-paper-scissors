@@ -10,7 +10,7 @@
     <button id="paper">Paper</button>
     <button id="scissors">Scissors</button>
 
-    <div id="scoreboard"><h1>Scoreboard</h1>
+    <div id="scoreboard"><h1>Scoreboard</h1>Scoreboard
         <div id="div-player">
             <h2>Player</h2>
             <p>Score: <span id="player-score">0</span></p>
@@ -73,8 +73,17 @@ function computerWinRound(){
     displayComputerScore.textContent = computerScore;
     console.log("You lost!")
 }
+function endGame(){
+    if (playerScore == 5){
+        announceWinner.textContent = "The winner is Player!"
+    } else if (computerScore == 5) {
+        announceWinner.textContent = "The winner is Computer!"
+    }
+}
 
 playRound();
+endGame();
+
 console.log(`The computer picked ${getComputerChoice()}`);
 console.log(`You picked ${getUserInput()}`);
 console.log(playRound());
