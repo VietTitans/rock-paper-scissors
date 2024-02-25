@@ -9,8 +9,27 @@
     <button id="rock">Rock</button>
     <button id="paper">Paper</button>
     <button id="scissors">Scissors</button>
-    <div id="displayScore">Score</div>
+
+    <div id="scoreboard">Score
+        <div id="div-player">
+            <h2>Player Score</h2>
+            <p>Score: <span id="player-score">0</span></p>
+        </div>
+        <div id="div-computer"> 
+            <h2>Computer Score</h2>
+            <p>Score: <span id="computer-score">0</span></p>
+        </div>
+    </div>
+<h2 id="announceWinner"></h2>
+
 <script>
+
+let playerScore = 0;
+let computerScore = 0;
+
+const displayPlayerScore = document.querySelector("#player-score");
+const displayComputerScore = document.querySelector("#computer-score");
+const announceWinner = document.querySelector("#announceWinner");
 
 const validChoice = ["rock", "paper", "scissors"];
 
@@ -21,28 +40,18 @@ function getComputerChoice(){
 }
 
 function getUserInput(){
-    // Get userinput by typing
-    // let userInput = prompt("Write either rock, paper or scissors");
-    // userInput = userInput.toLowerCase();
-    // if (!validChoice.includes(userInput)) {
-    //     alert("Invalid input. Please write either rock, paper or scissors");
-    //     getUserInput();
-    // } else {
-    //     return userInput;
-    // }
-
     const selectRock = document.querySelector("#rock");
-    selectRock.addEventListener("click", () => playRound("rock", computerChoice));
+    selectRock.addEventListener("click", () => playRound("rock", getComputerChoice()));
     const selectPaper = document.querySelector("#paper");
-    selectPaper.addEventListener("click", () => playRound("paper", computerChoice));
+    selectPaper.addEventListener("click", () => playRound("paper", getComputerChoice()));
     const selectScissors = document.querySelector("#scissors");
-    selectScissors.addEventListener("click", () => playRound("scissors", computerChoice)); 
-
+    selectScissors.addEventListener("click", () => playRound("scissors", getComputerChoice())); 
 }
 
 function playRound(userInput, computerChoice){
     if (userInput === "rock" && computerChoice === "scissors"){
-        return console.log("You win!");
+        displayPlayerScore.textContent = "One point for you!"
+        //console.log("You win!");
     } else if (userInput === "paper" && computerChoice === "rock"){
         return console.log("You win!");
     } else if (userInput === "scissors" && computerChoice === "paper"){
@@ -54,12 +63,10 @@ function playRound(userInput, computerChoice){
     }
 }
 
-computerChoice = getComputerChoice();
-userInput = getUserInput();
-playRound(userInput, computerChoice);
-
-console.log(`The computer picked ${computerChoice}`);
-console.log(`You picked ${userInput}`);
+playRound();
+    
+console.log(`The computer picked ${getComputerChoice()}`);
+console.log(`You picked ${getUserInput()}`);
 console.log(playRound());
 
 </script>
