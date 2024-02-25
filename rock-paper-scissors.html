@@ -10,13 +10,13 @@
     <button id="paper">Paper</button>
     <button id="scissors">Scissors</button>
 
-    <div id="scoreboard">Score
+    <div id="scoreboard"><h1>Scoreboard</h1>
         <div id="div-player">
-            <h2>Player Score</h2>
+            <h2>Player</h2>
             <p>Score: <span id="player-score">0</span></p>
         </div>
         <div id="div-computer"> 
-            <h2>Computer Score</h2>
+            <h2>Computer</h2>
             <p>Score: <span id="computer-score">0</span></p>
         </div>
     </div>
@@ -38,7 +38,6 @@ function getComputerChoice(){
     computerChoice = validChoice[result];
     return computerChoice;
 }
-
 function getUserInput(){
     const selectRock = document.querySelector("#rock");
     selectRock.addEventListener("click", () => playRound("rock", getComputerChoice()));
@@ -50,21 +49,32 @@ function getUserInput(){
 
 function playRound(userInput, computerChoice){
     if (userInput === "rock" && computerChoice === "scissors"){
-        displayPlayerScore.textContent = "One point for you!"
-        //console.log("You win!");
+        playerWinRound();
     } else if (userInput === "paper" && computerChoice === "rock"){
-        return console.log("You win!");
+        playerWinRound();
+        console.log("You win!");
     } else if (userInput === "scissors" && computerChoice === "paper"){
-        return console.log("You win!");
+        playerWinRound();
+        console.log("You win!");
     } else if (userInput === computerChoice){
-        return console.log("It's a tie!");
+        //announceWinner.textContent = "It's a tie!"
+        console.log("It's a tie!");
     } else {
-        return console.log("You lost!")
+        computerWinRound();
     }
+}
+function playerWinRound(){
+    playerScore++;
+    displayPlayerScore.textContent = playerScore;
+    console.log("You win!");
+}
+function computerWinRound(){
+    computerScore++;
+    displayComputerScore.textContent = computerScore;
+    console.log("You lost!")
 }
 
 playRound();
-    
 console.log(`The computer picked ${getComputerChoice()}`);
 console.log(`You picked ${getUserInput()}`);
 console.log(playRound());
